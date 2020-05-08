@@ -1,0 +1,33 @@
+logging:
+  level:
+    com:
+      eleven:
+        shiro: debug
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.66.31:3306/shirodata?useUnicode=yes&characterEncoding=UTF8&useSSL=false
+    username: root
+    password: mysql
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      max-lifetime: 1765000
+      maximum-pool-size: 15
+  redis:
+    host: 192.168.66.37
+    port: 6379
+    # password: 123456
+    timeout: 10000
+    jedis:
+      pool:
+        max-active: 20
+        min-idle: 3
+        max-idle: 10
+  aop:
+    proxy-target-class: true
+    auto: true
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+    min-response-size: 1024
+  port: 8888
